@@ -6,12 +6,6 @@ export const App = ()=>{
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  const state = {
-                  good,
-                  neutral,
-                  bad
-
-                }
   const countTotalFeedback = ()=>{
     return good+neutral+bad;
   }
@@ -29,7 +23,7 @@ export const App = ()=>{
   return (
     <div className={css.common}>
         <h1>Please leave feedback</h1>
-        <SectionTitle state={state} total={()=>countTotalFeedback()} handlerBtn={handlerBtn}/>
+        <SectionTitle state={{ good, neutral, bad }} total={()=>countTotalFeedback()} handlerBtn={handlerBtn}/>
     </div>
   );
 }
